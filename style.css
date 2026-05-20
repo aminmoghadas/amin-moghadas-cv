@@ -1317,6 +1317,25 @@ a.proj {
 
 .case-figure .case-shot:hover img { transform: scale(1.02); }
 
+/* Hero pair — two side-by-side scrolling hero shots */
+.case-hero-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.case-hero-pair .case-figure { gap: 10px; }
+
+.case-hero-pair .case-shot-scroll {
+  height: 420px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .case-hero-pair { grid-template-columns: 1fr; }
+}
+
 /* Hero screenshot — fixed height, auto-scroll on hover */
 .case-shot-scroll {
   height: 480px;

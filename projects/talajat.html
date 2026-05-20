@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../lightbox.js" defer></script>
 </head>
 <body>
 
@@ -50,35 +51,68 @@
       <h1 class="case-title" style="margin-bottom:4px;">Talajat</h1>
     </div>
   </div>
-  <p class="case-tagline">[1–2 sentence tagline about what Talajat is and your role on it.]</p>
+  <p class="case-tagline">Tech lead under Imaj Holding for Talajat.net — a performance rebuild, a custom multi-store accounting and inventory system, and focused replacements for the general-purpose plugins that were slowing the site down.</p>
   <a class="case-visit" href="https://talajat.net" target="_blank" rel="noopener">Visit talajat.net →</a>
 </section>
 
 <section class="container case-section">
-  <div class="case-shot">
-    <div class="case-shot-placeholder">Hero screenshot — replace with a real image</div>
+  <div class="case-hero-pair">
+    <figure class="case-figure">
+      <div class="case-shot-scroll" title="Hover to scroll · click to zoom">
+        <img src="../images/projects/talajat/hero-home.png" alt="Talajat homepage" loading="lazy" />
+      </div>
+      <figcaption class="case-figcaption">Homepage</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <div class="case-shot-scroll" title="Hover to scroll · click to zoom">
+        <img src="../images/projects/talajat/hero-shop.png" alt="Talajat shop" loading="lazy" />
+      </div>
+      <figcaption class="case-figcaption">Shop</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="container case-section">
   <p class="case-section-title">Context</p>
   <div class="case-body">
-    <p>[A paragraph about the client, the product, and the goals. Why did this matter?]</p>
-    <p>[Optional second paragraph: constraints, timeline, stakeholder dynamics.]</p>
+    <p>Talajat.net is an online gold retail brand operating under <strong>Imaj Holding</strong>, alongside sister brand Hebe.gold. The site had been built on a stack of heavy general-purpose plugins and AI-generated copy-paste code embedded directly in the theme — brittle and slow as the catalog grew. I led the technical rebuild: replacing the bloated stack with focused custom modules, and architecting a unified accounting and inventory system that spans both Talajat and Hebe storefronts plus the external marketplaces they sell on.</p>
   </div>
 </section>
 
 <section class="container case-section">
-  <p class="case-section-title">What I built</p>
+  <p class="case-section-title">Accounting &amp; inventory system</p>
   <div class="case-body">
-    <p>[A short paragraph describing your specific contribution.]</p>
+    <p>A custom WordPress-based engine that gives Imaj Holding a single source of truth for stock, sales, returns, and pricing across both Talajat and Hebe storefronts plus the external marketplaces they list on. No more manual reconciliation between systems — every change propagates automatically.</p>
   </div>
-  <ul class="case-list">
-    <li>[Highlight 1]</li>
-    <li>[Highlight 2]</li>
-    <li>[Highlight 3]</li>
-    <li>[Highlight 4]</li>
-  </ul>
+  <div class="case-gallery">
+    <figure class="case-figure">
+      <div class="case-shot"><img src="../images/projects/talajat/accounting-1.png" alt="Accounting system view 1" loading="lazy" /></div>
+    </figure>
+    <figure class="case-figure">
+      <div class="case-shot"><img src="../images/projects/talajat/accounting-2.png" alt="Accounting system view 2" loading="lazy" /></div>
+    </figure>
+    <figure class="case-figure">
+      <div class="case-shot"><img src="../images/projects/talajat/accounting-3.png" alt="Accounting system view 3" loading="lazy" /></div>
+    </figure>
+    <figure class="case-figure">
+      <div class="case-shot"><img src="../images/projects/talajat/accounting-4.png" alt="Accounting system view 4" loading="lazy" /></div>
+    </figure>
+  </div>
+</section>
+
+<section class="container case-section">
+  <p class="case-section-title">Product filter plugin</p>
+  <div class="case-body">
+    <p>A purpose-built product filter tailored to gold-jewelry attributes (karat, weight, design family, and more) — replacing a heavy general-purpose plugin that was struggling under the catalog size. Fast, indexed, and shaped around how customers actually shop for gold.</p>
+  </div>
+  <div class="case-gallery">
+    <figure class="case-figure">
+      <div class="case-shot"><img src="../images/projects/talajat/filter-1.png" alt="Product filter view 1" loading="lazy" /></div>
+    </figure>
+    <figure class="case-figure">
+      <div class="case-shot"><img src="../images/projects/talajat/filter-2.png" alt="Product filter view 2" loading="lazy" /></div>
+    </figure>
+  </div>
 </section>
 
 <section class="container case-section">
@@ -86,19 +120,9 @@
   <div class="tags">
         <span class="tag">WordPress</span>
         <span class="tag">WooCommerce</span>
-        <span class="tag">Web Design</span>
-  </div>
-</section>
-
-<section class="container case-section">
-  <p class="case-section-title">More views</p>
-  <div class="case-gallery">
-    <div class="case-shot">
-      <div class="case-shot-placeholder">Screenshot 2</div>
-    </div>
-    <div class="case-shot">
-      <div class="case-shot-placeholder">Screenshot 3</div>
-    </div>
+        <span class="tag">Custom Plugin</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Performance</span>
   </div>
 </section>
 
