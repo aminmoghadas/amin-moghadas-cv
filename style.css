@@ -1,0 +1,1172 @@
+/* ============================================================
+   Resume — Amin Moghadas
+   Senior WordPress Developer
+   ============================================================ */
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('fonts/YekanBakhFaNum-VF.ttf');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg: #FFFFFF;
+  --surface: #FAFAFA;
+  --card: #F7F7F8;
+  --text: #09090B;
+  --text-muted: #52525B;
+  --text-soft: #71717A;
+  --text-faint: #A1A1AA;
+  --border: #E4E4E7;
+  --border-soft: #F4F4F5;
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --primary-soft: #EEF2FF;
+  --primary-soft-2: #E0E7FF;
+  --success: #10B981;
+  --warn: #F59E0B;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body[dir="rtl"] {
+  font-family: 'YekanBakh', 'Vazirmatn', system-ui, sans-serif;
+}
+
+.mono, .mono-num {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-feature-settings: "tnum";
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ============================================================
+   Topbar
+   ============================================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--text);
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.topbar nav {
+  display: flex;
+  gap: 28px;
+}
+
+.topbar nav a {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.topbar nav a:hover { color: var(--text); }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-soft);
+  gap: 6px;
+}
+
+.lang-switch a {
+  font-weight: 500;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.lang-switch a.active {
+  color: var(--text);
+  background: var(--border-soft);
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  padding: 80px 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 64px;
+  align-items: center;
+}
+
+.kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background: var(--card);
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.kicker .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.hero h1 {
+  font-size: clamp(44px, 7.5vw, 84px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+
+body[dir="rtl"] .hero h1 {
+  letter-spacing: -0.02em;
+}
+
+.hero h1 .period {
+  color: var(--primary);
+}
+
+.hero .summary {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin-bottom: 36px;
+}
+
+.hero .summary strong { color: var(--text); font-weight: 600; }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.18s;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: #27272A;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text);
+}
+
+.btn svg { width: 16px; height: 16px; }
+
+.hero-photo-wrap {
+  position: relative;
+}
+
+.hero-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 24px;
+  object-fit: cover;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 16px -16px -16px 16px;
+  border-radius: 24px;
+  border: 1px solid var(--primary);
+  z-index: -1;
+}
+
+body[dir="rtl"] .hero-photo-wrap::after {
+  inset: 16px 16px -16px -16px;
+}
+
+/* ============================================================
+   Metrics
+   ============================================================ */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+.metric {
+  padding: 8px 24px;
+  border-right: 1px solid var(--border);
+}
+
+.metric:last-child { border-right: none; }
+
+body[dir="rtl"] .metric { border-right: none; border-left: 1px solid var(--border); }
+body[dir="rtl"] .metric:last-child { border-left: none; }
+
+.metric .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.metric .num .unit {
+  font-size: 22px;
+  color: var(--text-soft);
+  margin-left: 2px;
+}
+
+.metric .lbl {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+section.container { padding: 60px 32px 0; }
+section:not(.container) { padding: 60px 0; }
+
+.section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: none;
+}
+
+.section-title::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--primary);
+}
+
+.section-heading {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+/* ============================================================
+   About
+   ============================================================ */
+.about p:not(.section-title) {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.about p:not(.section-title) strong { color: var(--text); font-weight: 600; }
+.about p:not(.section-title) + p:not(.section-title) { margin-top: 18px; }
+
+.about-highlights {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.highlight {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.highlight-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+
+.highlight-icon svg { width: 18px; height: 18px; }
+
+.highlight h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.highlight p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   Experience
+   ============================================================ */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 56px;
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+
+.exp:first-child { border-top: none; padding-top: 0; }
+
+.exp-side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.exp-loc {
+  font-size: 13px;
+  color: var(--text-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exp-loc svg { width: 12px; height: 12px; }
+
+.exp-body h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.exp-company {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.exp-company img {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  object-fit: contain;
+  background: var(--card);
+}
+
+.exp-intro {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.exp-achievements {
+  margin-bottom: 24px;
+}
+
+.exp-achievements li {
+  padding-left: 24px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.exp-achievements li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body[dir="rtl"] .exp-achievements li {
+  padding-left: 0;
+  padding-right: 24px;
+}
+
+body[dir="rtl"] .exp-achievements li::before {
+  left: auto;
+  right: 0;
+  content: "←";
+}
+
+.exp-achievements li b,
+.exp-achievements li strong {
+  font-weight: 600;
+  color: var(--text);
+  background: linear-gradient(transparent 62%, var(--primary-soft-2) 62%);
+  padding: 0 2px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  padding: 5px 10px;
+  background: var(--card);
+  color: var(--text-muted);
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Projects
+   ============================================================ */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.proj {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.proj:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.proj-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.proj-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.proj-head h3 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.proj-sub {
+  font-size: 12.5px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+
+.proj-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.proj-stats {
+  display: flex;
+  gap: 28px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-soft);
+}
+
+.proj-stat strong {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.proj-stat span {
+  font-size: 11.5px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  display: block;
+}
+
+.proj-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.proj-link:hover { gap: 10px; text-decoration: underline; }
+
+/* ============================================================
+   Commercial Products
+   ============================================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.product-card {
+  padding: 26px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.product-card:hover {
+  border-color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 14px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+}
+
+.product-icon svg { width: 20px; height: 20px; }
+
+.product-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.product-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.products-intro {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   Skills
+   ============================================================ */
+.skill-cats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 64px;
+}
+
+.cat h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.cat-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cat-items .tag {
+  font-size: 13px;
+  padding: 7px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.cat-items .tag.primary {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-color: var(--primary-soft-2);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Contact
+   ============================================================ */
+.contact {
+  text-align: center;
+  padding: 120px 0 80px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+  margin-top: 120px;
+}
+
+.contact .kicker {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact h2 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.contact h2 .accent { color: var(--primary); }
+
+.contact-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--text);
+  padding: 14px 26px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  margin-bottom: 32px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.contact-email:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.contact-email svg { width: 16px; height: 16px; }
+
+.contact-socials {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.contact-socials a {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.contact-socials a:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  transform: translateY(-2px);
+}
+
+.contact-socials svg { width: 18px; height: 18px; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+footer p {
+  font-size: 12.5px;
+  color: var(--text-soft);
+}
+
+footer .mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ============================================================
+   RTL Typography Refinements
+   Persian text needs different treatment than Latin:
+   - No negative letter-spacing (breaks Persian connections)
+   - No uppercase (Persian has no case)
+   - Higher line-height (Persian has more vertical complexity)
+   - YekanBakh font for elements that default to JetBrains Mono
+   - FaNum variant auto-converts ASCII digits → Persian digits
+   ============================================================ */
+
+body[dir="rtl"] { line-height: 1.75; }
+
+/* Replace mono with YekanBakh for elements containing Persian text */
+body[dir="rtl"] .mono,
+body[dir="rtl"] .mono-num,
+body[dir="rtl"] .kicker,
+body[dir="rtl"] .section-title,
+body[dir="rtl"] .exp-date,
+body[dir="rtl"] .cat h4,
+body[dir="rtl"] .tag,
+body[dir="rtl"] .metric .num,
+body[dir="rtl"] .metric .lbl,
+body[dir="rtl"] .proj-stat strong,
+body[dir="rtl"] .proj-stat span,
+body[dir="rtl"] footer p,
+body[dir="rtl"] footer .mono {
+  font-family: 'YekanBakh', 'Vazirmatn', system-ui, sans-serif;
+  font-feature-settings: normal;
+}
+
+/* Hero name — Persian needs no negative tracking */
+body[dir="rtl"] .hero h1 {
+  letter-spacing: 0;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+/* Section big heading */
+body[dir="rtl"] .section-heading {
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* Eyebrow labels — drop uppercase + spacing for Persian */
+body[dir="rtl"] .section-title {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Category sub-headers */
+body[dir="rtl"] .cat h4 {
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Kicker badge */
+body[dir="rtl"] .kicker {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* Metrics — numbers + labels */
+body[dir="rtl"] .metric .num {
+  letter-spacing: 0;
+  font-weight: 800;
+}
+body[dir="rtl"] .metric .num .unit {
+  font-weight: 700;
+}
+body[dir="rtl"] .metric .lbl {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Tags */
+body[dir="rtl"] .tag {
+  letter-spacing: 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 11px;
+}
+body[dir="rtl"] .cat-items .tag {
+  font-size: 13px;
+  padding: 7px 13px;
+}
+
+/* Experience date — show in Persian numerals via YekanBakh */
+body[dir="rtl"] .exp-date {
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+body[dir="rtl"] .exp-loc { font-size: 13.5px; }
+
+/* Experience body sizes — Persian needs slightly larger */
+body[dir="rtl"] .exp-body h3 {
+  letter-spacing: 0;
+  font-weight: 700;
+}
+body[dir="rtl"] .exp-company { font-size: 14px; }
+body[dir="rtl"] .exp-intro {
+  font-size: 15.5px;
+  line-height: 1.9;
+}
+body[dir="rtl"] .exp-achievements li {
+  font-size: 15.5px;
+  line-height: 1.9;
+}
+
+/* Achievement arrows — use mono for the arrow glyph only */
+body[dir="rtl"] .exp-achievements li::before {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Project stats */
+body[dir="rtl"] .proj-stat strong {
+  letter-spacing: 0;
+  font-weight: 800;
+}
+body[dir="rtl"] .proj-stat span {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
+/* Project body */
+body[dir="rtl"] .proj-head h3 {
+  letter-spacing: 0;
+  font-weight: 700;
+}
+body[dir="rtl"] .proj-sub { font-size: 13px; }
+body[dir="rtl"] .proj-desc {
+  font-size: 15px;
+  line-height: 1.85;
+}
+body[dir="rtl"] .proj-link {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0;
+}
+
+/* Highlight cards */
+body[dir="rtl"] .highlight h4 {
+  font-size: 15.5px;
+  font-weight: 700;
+}
+body[dir="rtl"] .highlight p {
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+/* Hero summary — larger for readability */
+body[dir="rtl"] .hero .summary {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+/* About paragraphs */
+body[dir="rtl"] .about p {
+  font-size: 16.5px;
+  line-height: 1.95;
+}
+
+/* Contact */
+body[dir="rtl"] .contact h2 {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+body[dir="rtl"] .contact-sub {
+  font-size: 16px;
+  line-height: 1.85;
+}
+body[dir="rtl"] .contact-email {
+  letter-spacing: 0;
+  direction: ltr;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Footer in Persian */
+body[dir="rtl"] footer p {
+  font-size: 12.5px;
+  letter-spacing: 0;
+}
+body[dir="rtl"] footer .mono {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0;
+}
+
+/* Topbar nav in Persian */
+body[dir="rtl"] .topbar nav a { font-size: 14px; }
+body[dir="rtl"] .brand { font-size: 16px; }
+body[dir="rtl"] .lang-switch { font-size: 13px; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media screen and (max-width: 900px) {
+  .container { padding: 0 20px; }
+  .topbar-inner { padding: 14px 20px; }
+  .topbar nav { display: none; }
+
+  .hero { grid-template-columns: 1fr; gap: 32px; padding: 56px 0 32px; }
+  .hero-photo-wrap { order: -1; }
+  .hero-photo { width: 140px; height: 140px; }
+  .hero-photo-wrap::after { inset: 10px -10px -10px 10px; }
+
+  .metrics { grid-template-columns: repeat(2, 1fr); gap: 0; padding: 0; }
+  .metric {
+    padding: 24px 18px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .metric:nth-child(even) { border-right: none; }
+  .metric:nth-child(n+3) { border-bottom: none; }
+  body[dir="rtl"] .metric { border-right: 1px solid var(--border); border-left: none; }
+  body[dir="rtl"] .metric:nth-child(even) { border-right: none; }
+  .metric .num { font-size: 32px; }
+
+  section.container { padding: 72px 20px; }
+  section:not(.container) { padding: 72px 0; }
+
+  .about-highlights { grid-template-columns: 1fr; gap: 14px; }
+  .exp { grid-template-columns: 1fr; gap: 18px; padding: 36px 0; }
+  .exp-side { flex-direction: row; gap: 14px; align-items: center; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .skill-cats { grid-template-columns: 1fr; gap: 28px; }
+
+  .contact { padding: 80px 0 60px; }
+}
+
+/* ============================================================
+   Contact line under the hero buttons (visible on screen + PDF)
+   ============================================================ */
+.print-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-top: 18px;
+  letter-spacing: 0;
+}
+
+.print-contact a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.print-contact a:hover {
+  color: var(--text);
+  text-decoration-color: var(--primary);
+}
+
+.print-contact .sep {
+  color: var(--text-faint);
+  user-select: none;
+}
+
+body[dir="rtl"] .print-contact {
+  direction: ltr;
+  justify-content: flex-end;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Only hide what shouldn't appear in PDF — keep all screen styling intact */
+  .topbar,
+  footer,
+  .btn-download {
+    display: none !important;
+  }
+
+  /* Keep cards from splitting across pages */
+  .hero,
+  .metrics,
+  .about-highlights,
+  .highlight,
+  .exp,
+  .proj,
+  .product-card,
+  .cat {
+    page-break-inside: avoid;
+  }
+
+  /* Disable hover/animation in print */
+  .kicker .pulse-dot { animation: none; }
+}
