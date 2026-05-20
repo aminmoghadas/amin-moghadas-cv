@@ -1012,7 +1012,7 @@ body[dir="rtl"] .proj-desc {
   line-height: 1.85;
 }
 body[dir="rtl"] .proj-link {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'YekanBakh', 'Vazirmatn', system-ui, sans-serif;
   letter-spacing: 0;
 }
 
@@ -1059,7 +1059,7 @@ body[dir="rtl"] footer p {
   letter-spacing: 0;
 }
 body[dir="rtl"] footer .mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'YekanBakh', 'Vazirmatn', system-ui, sans-serif;
   letter-spacing: 0;
 }
 
