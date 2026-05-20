@@ -1290,7 +1290,30 @@ a.proj {
 .case-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 28px 18px;
+}
+
+.case-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+}
+
+.case-figure .case-shot { margin-bottom: 0; }
+
+.case-figcaption {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.case-figcaption strong { color: var(--text); font-weight: 600; }
+
+body[dir="rtl"] .case-figcaption {
+  font-family: 'YekanBakh', 'Vazirmatn', system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.75;
 }
 
 .case-list {
