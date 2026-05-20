@@ -884,6 +884,12 @@ body[dir="rtl"] .metric .num,
 body[dir="rtl"] .metric .lbl,
 body[dir="rtl"] .proj-stat strong,
 body[dir="rtl"] .proj-stat span,
+body[dir="rtl"] .proj-link,
+body[dir="rtl"] .proj-sub,
+body[dir="rtl"] .case-meta,
+body[dir="rtl"] .case-section-title,
+body[dir="rtl"] .case-visit,
+body[dir="rtl"] .case-shot-placeholder,
 body[dir="rtl"] footer p,
 body[dir="rtl"] footer .mono {
   font-family: 'YekanBakh', 'Vazirmatn', system-ui, sans-serif;
