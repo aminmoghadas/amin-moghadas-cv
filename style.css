@@ -1137,6 +1137,199 @@ body[dir="rtl"] .print-contact {
   justify-content: flex-end;
 }
 
+/* ============================================================
+   Project cards as links + logo placeholder
+   ============================================================ */
+a.proj {
+  color: inherit;
+  text-decoration: none;
+}
+
+.proj-logo-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.proj-logo-placeholder::before {
+  content: attr(data-initial);
+}
+
+/* ============================================================
+   Case study (project detail) pages
+   ============================================================ */
+.case-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-soft);
+  margin: 32px 0 24px;
+  transition: color 0.15s, gap 0.15s;
+}
+
+.case-back:hover {
+  color: var(--text);
+  gap: 12px;
+}
+
+.case-hero {
+  padding: 24px 0 56px;
+  border-bottom: 1px solid var(--border-soft);
+  margin-bottom: 56px;
+}
+
+.case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.case-meta .sep {
+  color: var(--text-faint);
+}
+
+.case-title {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.case-tagline {
+  font-size: 20px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.case-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+  transition: gap 0.15s;
+}
+
+.case-visit:hover { gap: 12px; text-decoration: underline; }
+
+.case-section {
+  margin-bottom: 56px;
+}
+
+.case-section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+}
+
+.case-body p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-bottom: 16px;
+}
+
+.case-body p strong { color: var(--text); font-weight: 600; }
+
+.case-shot {
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.case-shot img { width: 100%; height: auto; display: block; }
+
+.case-shot-placeholder {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.case-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.case-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 28px;
+  max-width: 680px;
+}
+
+.case-list li {
+  font-size: 15px;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+}
+
+.case-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+body[dir="rtl"] .case-list li {
+  padding-left: 0;
+  padding-right: 18px;
+}
+
+body[dir="rtl"] .case-list li::before {
+  left: auto;
+  right: 0;
+}
+
+body[dir="rtl"] .case-back {
+  font-family: 'YekanBakh', 'Vazirmatn', sans-serif;
+}
+
+@media (max-width: 760px) {
+  .case-title { font-size: 40px; }
+  .case-gallery { grid-template-columns: 1fr; }
+  .case-list { grid-template-columns: 1fr; }
+}
+
 @media print {
   @page {
     size: A4;
