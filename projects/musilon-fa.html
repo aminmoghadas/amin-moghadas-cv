@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../lightbox.js" defer></script>
 </head>
 <body dir="rtl">
 
@@ -50,35 +51,22 @@
       <h1 class="case-title" style="margin-bottom:4px;">Musilon</h1>
     </div>
   </div>
-  <p class="case-tagline">[توضیح یک‌خطی درباره Musilon و نقش تو در پروژه.]</p>
+  <p class="case-tagline">توسعه‌دهنده‌ی ارشد وردپرس روی Musilon — ساخت موتور اختصاصی ingest محتوا، اتوماسیون بازاریابی، و زیرساختی که پلتفرم استریم موسیقی رو مقیاس‌پذیر کرد.</p>
   <a class="case-visit" href="https://musilon.com" target="_blank" rel="noopener">مشاهده musilon.com →</a>
 </section>
 
 <section class="container case-section">
-  <div class="case-shot">
-    <div class="case-shot-placeholder">اسکرین‌شات اصلی — جایگزین کن</div>
+  <div class="case-shot-scroll" title="موس را روی تصویر ببرید برای اسکرول · کلیک برای بزرگ‌نمایی">
+    <img src="../images/projects/musilon/hero.png" alt="صفحه اصلی Musilon" loading="lazy" />
   </div>
 </section>
 
 <section class="container case-section">
   <p class="case-section-title">زمینه</p>
   <div class="case-body">
-    <p>[یک پاراگراف درباره کارفرما، محصول، و هدف‌ها. چرا این پروژه مهم بود؟]</p>
-    <p>[اختیاری: محدودیت‌ها، زمان‌بندی، dynamics ذی‌نفعان.]</p>
+    <p>Musilon یک پلتفرم استریم موسیقی با کاتالوگ عظیمی از آلبوم، ترک، و متادیتای هنرمندانه. چالش اصلی مهندسی، ingest محتوا بود: چطور کاتالوگ رو در مقیاس بسازی بدون اینکه یک تیم ادیتور دستی پست بسازن؟ یک افزونه‌ی اختصاصی ساختم که متادیتای آلبوم/ترک رو از API و web crawling می‌گرفت، نرمالایز می‌کرد، و ساختار کامل محتوا رو خودکار می‌ساخت — ساخت پست تقریباً <strong>۱۰۰ برابر سریع‌تر</strong> از روند دستی قبلی تیم.</p>
+    <p>در کنار موتور ingest، اتوماسیون بازاریابی روی n8n و Elasticsearch، یک لایه‌ی اختصاصی محافظت دانلود، و مهاجرت از سرور اشتراکی به اختصاصی هم تحویل داده شد. همکاری ۲۰ ماه طول کشید.</p>
   </div>
-</section>
-
-<section class="container case-section">
-  <p class="case-section-title">چی ساختم</p>
-  <div class="case-body">
-    <p>[توضیح کوتاه درباره مشارکت اختصاصی تو.]</p>
-  </div>
-  <ul class="case-list">
-    <li>[نکته ۱]</li>
-    <li>[نکته ۲]</li>
-    <li>[نکته ۳]</li>
-    <li>[نکته ۴]</li>
-  </ul>
 </section>
 
 <section class="container case-section">
@@ -88,18 +76,7 @@
         <span class="tag">n8n</span>
         <span class="tag">Elasticsearch</span>
         <span class="tag">Web Crawling</span>
-  </div>
-</section>
-
-<section class="container case-section">
-  <p class="case-section-title">تصاویر بیشتر</p>
-  <div class="case-gallery">
-    <div class="case-shot">
-      <div class="case-shot-placeholder">اسکرین‌شات ۲</div>
-    </div>
-    <div class="case-shot">
-      <div class="case-shot-placeholder">اسکرین‌شات ۳</div>
-    </div>
+        <span class="tag">افزونه اختصاصی</span>
   </div>
 </section>
 

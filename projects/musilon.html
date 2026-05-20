@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <script src="../lightbox.js" defer></script>
 </head>
 <body>
 
@@ -50,35 +51,22 @@
       <h1 class="case-title" style="margin-bottom:4px;">Musilon</h1>
     </div>
   </div>
-  <p class="case-tagline">[1–2 sentence tagline about what Musilon is and your role on it.]</p>
+  <p class="case-tagline">Senior WordPress developer on Musilon — building a custom content ingestion engine, marketing automation, and the infrastructure that made the music streaming platform scale.</p>
   <a class="case-visit" href="https://musilon.com" target="_blank" rel="noopener">Visit musilon.com →</a>
 </section>
 
 <section class="container case-section">
-  <div class="case-shot">
-    <div class="case-shot-placeholder">Hero screenshot — replace with a real image</div>
+  <div class="case-shot-scroll" title="Hover to scroll · click to zoom">
+    <img src="../images/projects/musilon/hero.png" alt="Musilon homepage" loading="lazy" />
   </div>
 </section>
 
 <section class="container case-section">
   <p class="case-section-title">Context</p>
   <div class="case-body">
-    <p>[A paragraph about the client, the product, and the goals. Why did this matter?]</p>
-    <p>[Optional second paragraph: constraints, timeline, stakeholder dynamics.]</p>
+    <p>Musilon is a music streaming platform that operates a massive content catalog of albums, tracks, and artist metadata. The core engineering challenge was content ingestion: how do you build out the catalog at scale without a team of editors manually creating posts? I built a custom plugin that fetches album/track metadata via external APIs and page crawling, normalizes it, and auto-generates the full content graph — making post creation roughly <strong>100× faster</strong> than the team's previous manual workflow.</p>
+    <p>Alongside the ingestion engine, I shipped marketing automation built on n8n and Elasticsearch, a custom download-protection layer, and led a migration from shared to dedicated hosting. The engagement ran for 20 months.</p>
   </div>
-</section>
-
-<section class="container case-section">
-  <p class="case-section-title">What I built</p>
-  <div class="case-body">
-    <p>[A short paragraph describing your specific contribution.]</p>
-  </div>
-  <ul class="case-list">
-    <li>[Highlight 1]</li>
-    <li>[Highlight 2]</li>
-    <li>[Highlight 3]</li>
-    <li>[Highlight 4]</li>
-  </ul>
 </section>
 
 <section class="container case-section">
@@ -88,18 +76,7 @@
         <span class="tag">n8n</span>
         <span class="tag">Elasticsearch</span>
         <span class="tag">Web Crawling</span>
-  </div>
-</section>
-
-<section class="container case-section">
-  <p class="case-section-title">More views</p>
-  <div class="case-gallery">
-    <div class="case-shot">
-      <div class="case-shot-placeholder">Screenshot 2</div>
-    </div>
-    <div class="case-shot">
-      <div class="case-shot-placeholder">Screenshot 3</div>
-    </div>
+        <span class="tag">Custom Plugin</span>
   </div>
 </section>
 
